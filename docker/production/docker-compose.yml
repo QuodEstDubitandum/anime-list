@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  docker-prod:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    image: docker-prod
+    ports:
+      - "3001:3000"
