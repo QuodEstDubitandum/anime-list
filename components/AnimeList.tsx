@@ -16,13 +16,13 @@ export default function AnimeList(props: { animeCards: AnimeCard[] }) {
             className="relative flex flex-col items-center border bg-black border-black rounded-lg shadow-md shadow-black w-[416px]"
             key={index}
           >
-            <div className="text-center py-1 rounded-full border border-foreground w-fit aspect-square my-2 shadow-sm shadow-black">
+            <div className="text-center py-1 w-fit shadow-sm shadow-black">
               {card.ranking}
             </div>
             <div className="text-center pb-2 text-xl">{card.name}</div>
             <Link
               className="relative w-[400px] h-[250px] mb-2 overflow-hidden"
-              href={`/${encodeURIComponent(card.name)}`}
+              href={`/${encodeURIComponent(card.id)}`}
             >
               <Image
                 src={card.imageUrl}

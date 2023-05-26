@@ -1,6 +1,5 @@
 import AnimeList from "@/components/AnimeList";
 import { client } from "@/lib/contentful";
-import { Asset, AssetLink, Link } from "contentful/dist/types/types";
 
 export default async function Home() {
   const animeCardArray: AnimeCard[] = [];
@@ -8,6 +7,7 @@ export default async function Home() {
   // console.log(entries.items[0].sys.contentType.sys.id);
   for (let i = 0; i < entries.items.length; i++) {
     const animeCard: AnimeCard = {
+      id: entries.items[i].sys.id,
       name: entries.items[i].fields.name as string,
       description: entries.items[i].fields.description as string,
       imageUrl:
@@ -20,6 +20,7 @@ export default async function Home() {
             ).fields.file.url
           : "",
       ranking: entries.items[i].fields.ranking as number,
+      comment: entries.items[i].fields.comment as string | undefined,
     };
     animeCardArray.push(animeCard);
   }
