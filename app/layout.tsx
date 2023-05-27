@@ -1,9 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-import ReduxProvider from "@/components/ReduxProvider";
+import { Montserrat } from "next/font/google";
 import { ReactQueryProvider } from "@/components/ReactQueryProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -16,13 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gradient-to-r from-black to-blue-700">
-        <ReduxProvider>
-          <ReactQueryProvider>
-            <main>{children}</main>
-          </ReactQueryProvider>
-        </ReduxProvider>
+    <html lang="en" className={montserrat.className}>
+      <body className="w-full h-fit">
+        <div className="bg-gradient-to-br from-black via-blue-900 to-emerald-600 w-full h-full fixed top-0 left-0 -z-50"></div>
+        <ReactQueryProvider>
+          <main>{children}</main>
+        </ReactQueryProvider>
       </body>
     </html>
   );

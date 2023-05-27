@@ -6,7 +6,7 @@
   :root {
     --background: 0 0% 100%;
     /* --foreground: 222.2 47.4% 11.2%; */
-    --foreground: 160 70% 50%;
+    --foreground: 160 50% 50%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -83,7 +83,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
