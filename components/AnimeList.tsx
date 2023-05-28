@@ -31,6 +31,7 @@ export default function AnimeList(props: { animeCards: AnimeCard[] }) {
                 alt="Anime Thumbnail"
                 fill={true}
                 className="zoom-image rounded-lg object-cover"
+                sizes="(max-width: 1023px) 60vw, 100vw"
               />
             </Link>
           </div>
